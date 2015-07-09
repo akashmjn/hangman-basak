@@ -110,7 +110,7 @@ def hangman(secretWord):
       partially guessed word so far, as well as letters that the 
       user has not yet guessed.
     '''
-    roundCount = 8
+    roundCount = 7
     lettersGuessed = [] 
 
     def round(remGuess):
@@ -121,13 +121,11 @@ def hangman(secretWord):
         print "------------"
         print "You have %d guesses left." % remGuess
         print "Available letters: %s" % getAvailableLetters(lettersGuessed)
-
         #Taking input and checking validity. Repeat until valid input.
         guess = raw_input("Please guess a letter: ")
         guess = guess.lower()
         while invalidGuess(guess):
-            guess = raw_input("Please guess a letter: ")       
-
+            guess = raw_input("Please guess a letter: ")   
         #Evaluating guesses    
         if guess in lettersGuessed:
             print "Oops! You've already guessed that letter: %s" \
